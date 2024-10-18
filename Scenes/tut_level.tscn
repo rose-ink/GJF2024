@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddmbpwgqevmit"]
+
+[ext_resource type="PackedScene" path="res://Scenes/cat.tscn" id="1_wb1pk"]
+[ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="2_nsajr"]
+
+[node name="Tut Level" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_wb1pk")]
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(4, 4)
+
+[node name="AnimatableBody2D" parent="." instance=ExtResource("2_nsajr")]
+position = Vector2(0, 26)
