@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://beh61bk8eqq73"]
+
+[ext_resource type="Texture2D" uid="uid://jwlbpu05tp46" path="res://Assets/cat.png" id="1_0kbn3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8nxx"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbmcb"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10vxd"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2bsd"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j3ta"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxy4g"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5limt"]
+atlas = ExtResource("1_0kbn3")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uby2"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_l8nxx")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_mbmcb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10vxd")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2bsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j3ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxy4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5limt")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qwcon"]
+radius = 7.99978
+height = 17.9995
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5uby2")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 4)
+rotation = -1.5634
+shape = SubResource("CapsuleShape2D_qwcon")
