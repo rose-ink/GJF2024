@@ -24,10 +24,10 @@ func _on_body_entered(body):
 		while (bodies > 0):
 			bodies = bunny.get_node("Area2D").get_overlapping_bodies().size()
 			#isCatSafe = false
-			print("isCateSafe = false", bodies)
+			#print("isCateSafe = false", bodies)
 			await get_tree().physics_frame
 		isCatSafe = true
-		print("isCateSafe = true")
+		#print("isCateSafe = true")
 		
 	else:
 		player = bunny
