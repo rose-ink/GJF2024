@@ -71,7 +71,6 @@ limit_bottom = 200
 [node name="Players" parent="." instance=ExtResource("4_xp86s")]
 
 [node name="Kill Zone" parent="." instance=ExtResource("5_e45wh")]
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone"]
 shape = SubResource("WorldBoundaryShape2D_8vtyl")
