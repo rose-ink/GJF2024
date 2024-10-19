@@ -2,6 +2,7 @@ extends Node
 
 @onready var label = $Label
 @onready var timer = $Timer
+@onready var lose = $"../lose"
 
 func _ready():
 	timer.start()
@@ -15,3 +16,6 @@ func time_left_to_live():
 func _process(_delta):
 	label.text = "%02d:%02d" % time_left_to_live()
 
+func _on_timer_timeout():
+	#lose.visible
+	get_tree().reload_current_scene()
