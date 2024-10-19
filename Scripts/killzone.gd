@@ -36,9 +36,11 @@ func _on_timer_timeout():
 		player.position = initalPosition
 		otherPlayer.position = initalPosition
 	player.position = otherPlayer.position
+	
 	if currentHealth <= 0:
 		get_tree().reload_current_scene()
 	healthChanged.emit()
+	
 	count = 0
 	
 	#get_tree().reload_current_scene()
