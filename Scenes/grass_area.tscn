@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://d0a1jlhv8wshn"]
+[gd_scene load_steps=42 format=3 uid="uid://d0a1jlhv8wshn"]
 
 [ext_resource type="Texture2D" uid="uid://dhkt4eo7yghsn" path="res://Assets/grass tileset.png" id="1_ghult"]
 [ext_resource type="PackedScene" uid="uid://cjte834aq7e72" path="res://Scenes/game_manager.tscn" id="1_op0bp"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
-[ext_resource type="PackedScene" uid="uid://dtiussc78k8bo" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
+[ext_resource type="PackedScene" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
 [ext_resource type="Script" path="res://Scripts/healthBar2.0.gd" id="11_1fnpn"]
 [ext_resource type="PackedScene" uid="uid://t20j60rc62f" path="res://Scenes/fishkey.tscn" id="11_ro07h"]
 [ext_resource type="PackedScene" uid="uid://b68uffx4c68ww" path="res://Scenes/carrotkey.tscn" id="12_4wv51"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="13_1rf45"]
+[ext_resource type="PackedScene" uid="uid://dnwitrrm2aoya" path="res://Scripts/timer.tscn" id="14_hrixd"]
 
 [sub_resource type="GDScript" id="GDScript_iqrf4"]
 script/source = "extends Node
@@ -309,6 +310,21 @@ _data = {
 "up2": SubResource("Animation_fd1vt")
 }
 
+[sub_resource type="Animation" id="Animation_txwo2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(191, -327)]
+}
+
 [sub_resource type="Animation" id="Animation_kiajw"]
 resource_name = "side"
 length = 1.5
@@ -326,7 +342,13 @@ tracks/0/keys = {
 "values": [Vector2(322, -327), Vector2(191, -327)]
 }
 
-[sub_resource type="Animation" id="Animation_txwo2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8g0qt"]
+_data = {
+"RESET": SubResource("Animation_txwo2"),
+"side": SubResource("Animation_kiajw")
+}
+
+[sub_resource type="Animation" id="Animation_pr8qq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -338,13 +360,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(191, -327)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8g0qt"]
-_data = {
-"RESET": SubResource("Animation_txwo2"),
-"side": SubResource("Animation_kiajw")
+"values": [Vector2(412, -355)]
 }
 
 [sub_resource type="Animation" id="Animation_g8x3m"]
@@ -364,7 +380,13 @@ tracks/0/keys = {
 "values": [Vector2(557, -355), Vector2(557, -355), Vector2(412, -355), Vector2(412, -355)]
 }
 
-[sub_resource type="Animation" id="Animation_pr8qq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i5dcg"]
+_data = {
+"RESET": SubResource("Animation_pr8qq"),
+"side2": SubResource("Animation_g8x3m")
+}
+
+[sub_resource type="Animation" id="Animation_mqg4y"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -376,13 +398,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(412, -355)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i5dcg"]
-_data = {
-"RESET": SubResource("Animation_pr8qq"),
-"side2": SubResource("Animation_g8x3m")
+"values": [Vector2(558, -419)]
 }
 
 [sub_resource type="Animation" id="Animation_cu5kk"]
@@ -402,7 +418,13 @@ tracks/0/keys = {
 "values": [Vector2(558, -419), Vector2(558, -419), Vector2(715, -419), Vector2(715, -419)]
 }
 
-[sub_resource type="Animation" id="Animation_mqg4y"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxugf"]
+_data = {
+"RESET": SubResource("Animation_mqg4y"),
+"side pause": SubResource("Animation_cu5kk")
+}
+
+[sub_resource type="Animation" id="Animation_x853b"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -414,13 +436,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(558, -419)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxugf"]
-_data = {
-"RESET": SubResource("Animation_mqg4y"),
-"side pause": SubResource("Animation_cu5kk")
+"values": [Vector2(634, -135)]
 }
 
 [sub_resource type="Animation" id="Animation_fi6yg"]
@@ -440,7 +456,13 @@ tracks/0/keys = {
 "values": [Vector2(634, -135), Vector2(634, -216)]
 }
 
-[sub_resource type="Animation" id="Animation_x853b"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lng0p"]
+_data = {
+"RESET": SubResource("Animation_x853b"),
+"up3": SubResource("Animation_fi6yg")
+}
+
+[sub_resource type="Animation" id="Animation_dn4ul"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -452,13 +474,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(634, -135)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lng0p"]
-_data = {
-"RESET": SubResource("Animation_x853b"),
-"up3": SubResource("Animation_fi6yg")
+"values": [Vector2(370, -252)]
 }
 
 [sub_resource type="Animation" id="Animation_83x5o"]
@@ -476,21 +492,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(370, -252), Vector2(370, -319)]
-}
-
-[sub_resource type="Animation" id="Animation_dn4ul"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(370, -252)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_efdl0"]
@@ -547,7 +548,6 @@ shape = SubResource("WorldBoundaryShape2D_flic1")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Health Bar" parent="CanvasLayer" instance=ExtResource("10_f1fhw")]
-visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 460.0
@@ -627,3 +627,7 @@ libraries = {
 "": SubResource("AnimationLibrary_efdl0")
 }
 autoplay = "up4"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Timer" parent="CanvasLayer2" instance=ExtResource("14_hrixd")]
