@@ -6,16 +6,27 @@ extends Area2D
 var player = cat
 var otherPlayer = bunny
 var count = 0
+var isCatSafe = true
 
 var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 signal healthChanged
 
-
 func _on_body_entered(body):
 	if body == cat:
 		player = cat
 		otherPlayer = bunny
+		
+		
+		var bodies = 1
+		while (bodies > 0):
+			bodies = bunny.get_node("Area2D").get_overlapping_bodies().size()
+			#isCatSafe = false
+			print("isCateSafe = false", bodies)
+			await get_tree().physics_frame
+		isCatSafe = true
+		print("isCateSafe = true")
+		
 	else:
 		player = bunny
 		otherPlayer = cat
@@ -33,7 +44,8 @@ func _on_timer_timeout():
 		currentHealth -= 1
 		player.position = initalPosition
 		otherPlayer.position = initalPosition
-	player.position = otherPlayer.position
+	if isCatSafe == true:
+		player.position = otherPlayer.position
 	
 	if currentHealth <= 0:
 		get_tree().reload_current_scene()
