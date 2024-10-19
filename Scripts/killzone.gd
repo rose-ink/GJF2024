@@ -1,7 +1,8 @@
 extends Area2D
 @onready var timer = $Timer
-@onready var cat = $"../cat"
-@onready var bunny = $"../bunny"
+@onready var bunny = %bunny
+@onready var cat = %cat
+
 
 @onready var initalPosition = cat.position
 var player = cat

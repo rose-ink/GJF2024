@@ -11,6 +11,21 @@
 [ext_resource type="PackedScene" uid="uid://bxvypof8xb82y" path="res://teleport.tscn" id="8_sjpxl"]
 [ext_resource type="Script" path="res://Scripts/teleport2.gd" id="9_q1cjj"]
 
+[sub_resource type="Animation" id="Animation_3fq7y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1139, 20)]
+}
+
 [sub_resource type="Animation" id="Animation_wy7yy"]
 resource_name = "move"
 length = 2.0
@@ -28,21 +43,6 @@ tracks/0/keys = {
 "values": [Vector2(1139, 20), Vector2(1297, 20)]
 }
 
-[sub_resource type="Animation" id="Animation_3fq7y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1139, 20)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_17wsk"]
 _data = {
 "RESET": SubResource("Animation_3fq7y"),
@@ -55,8 +55,10 @@ distance = -67.0
 [node name="Tut Level" type="Node2D"]
 
 [node name="cat" parent="." instance=ExtResource("2_rgpu8")]
+unique_name_in_owner = true
 
 [node name="bunny" parent="." instance=ExtResource("3_ji1lu")]
+unique_name_in_owner = true
 position = Vector2(0, 4)
 
 [node name="Instructions" type="Node" parent="."]

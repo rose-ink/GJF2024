@@ -1,7 +1,8 @@
 extends Camera2D
 
-@onready var player1 = $"../bunny"
-@onready var player2 = $"../cat"
+@onready var player1 = %bunny
+@onready var player2 = %cat
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
