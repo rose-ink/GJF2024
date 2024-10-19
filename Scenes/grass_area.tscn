@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://d0a1jlhv8wshn"]
+[gd_scene load_steps=13 format=3 uid="uid://d0a1jlhv8wshn"]
 
 [ext_resource type="Texture2D" uid="uid://dhkt4eo7yghsn" path="res://Assets/grass tileset.png" id="1_ghult"]
 [ext_resource type="Texture2D" uid="uid://cs5ooshgene5f" path="res://Assets/tileset tunnels.png" id="2_ty4m5"]
 [ext_resource type="Texture2D" uid="uid://hgg6lnch5dlp" path="res://Assets/bg sky tileset.png" id="3_04n3r"]
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_k1dk3"]
-[ext_resource type="Script" path="res://Scripts/bunny.gd" id="4_d6857"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
-[ext_resource type="Script" path="res://Scripts/cat.gd" id="5_d46bg"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
 
@@ -167,13 +165,9 @@ distance = -63.0
 [node name="Players" type="Node" parent="."]
 
 [node name="bunny" parent="Players" instance=ExtResource("3_k1dk3")]
-collision_layer = 2
-script = ExtResource("4_d6857")
 
 [node name="cat" parent="Players" instance=ExtResource("4_pv4j0")]
 position = Vector2(23, -3)
-collision_layer = 2
-script = ExtResource("5_d46bg")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7p7gy")
@@ -188,7 +182,7 @@ layer_2/name = "midground"
 layer_2/tile_data = PackedInt32Array(131067, 65536, 1, 131068, 65536, 1, 131069, 65536, 1, 131070, 65536, 1, 131071, 65536, 1, 65536, 65536, 1, 65537, 65536, 1, 65538, 65536, 1, 65539, 65536, 1, 65540, 65536, 1, 65541, 65536, 1, 65542, 65536, 1, 65543, 65536, 1, 65544, 65536, 1, 65545, 65536, 1, 65546, 65536, 1, -196604, 65536, 1, -196603, 65536, 1, -196602, 65536, 1, -196601, 65536, 1, -196600, 65536, 1, -196599, 65536, 1, -196598, 65536, 1, -196597, 65536, 1, -196596, 65536, 1, -131069, 65536, 1, -131070, 65536, 1, -131071, 65536, 1, -393214, 65536, 1, -393215, 65536, 1, -393216, 65536, 1, -327681, 65536, 1, -327682, 65536, 1, -327683, 65536, 1, -65540, 65536, 1, -65541, 65536, 1, -65542, 65536, 1, -65543, 65536, 1, -65544, 65536, 1, -262150, 65536, 1, -262151, 65536, 1, -262152, 65536, 1, -262153, 65536, 1)
 
 [node name="Player Cam" parent="." instance=ExtResource("8_w18pc")]
-limit_bottom = 200
+limit_bottom = 150
 limit_smoothed = true
 
 [node name="Kill Zone" parent="." instance=ExtResource("9_xc8wa")]
