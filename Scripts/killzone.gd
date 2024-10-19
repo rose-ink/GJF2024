@@ -1,8 +1,8 @@
 extends Area2D
-
 @onready var timer = $Timer
 @onready var bunny = $"../Players/bunny"
 @onready var cat = $"../Players/cat"
+@onready var initalPosition = cat.position
 var player = cat
 var otherPlayer = bunny
 var count = 0
@@ -13,7 +13,6 @@ signal healthChanged
 
 
 func _on_body_entered(body):
-	healthChanged.emit()
 	if body == cat:
 		player = cat
 		otherPlayer = bunny
@@ -28,12 +27,18 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	Engine.time_scale = 1
+	currentHealth -= 1
 	
 	#player.get_node("CollisionShape2D").disabled = false
 	player.velocity = Vector2(0,0)
 	if count == 2:
-		get_tree().reload_current_scene()
+		currentHealth -= 1
+		player.position = initalPosition
+		otherPlayer.position = initalPosition
 	player.position = otherPlayer.position
+	if currentHealth <= 0:
+		get_tree().reload_current_scene()
+	healthChanged.emit()
 	count = 0
 	
 	#get_tree().reload_current_scene()
