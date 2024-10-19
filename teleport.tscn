@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxvypof8xb82y"]
+
+[ext_resource type="Texture2D" uid="uid://4vxh6hsytask" path="res://Assets/teleport.png" id="1_3w8fm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4s8r"]
+radius = 6.0
+
+[node name="Teleport" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3w8fm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p4s8r")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

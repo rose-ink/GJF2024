@@ -41,7 +41,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_rppr3"]
 radius = 8.0
 
-[node name="Fish Key" type="Area2D"]
+[node name="Fish Key2" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vx0ad")
