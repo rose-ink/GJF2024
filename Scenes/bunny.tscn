@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv1v3slqxeyw8"]
+[gd_scene load_steps=12 format=3 uid="uid://bv1v3slqxeyw8"]
 
 [ext_resource type="Texture2D" uid="uid://1wbiieh1q05c" path="res://Assets/bunny.png" id="1_3q5oo"]
+[ext_resource type="Script" path="res://Scripts/bunny.gd" id="1_q03xb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5niv"]
 atlas = ExtResource("1_3q5oo")
@@ -73,6 +74,7 @@ animations = [{
 radius = 7.0
 
 [node name="bunny" type="CharacterBody2D"]
+script = ExtResource("1_q03xb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_esco1")

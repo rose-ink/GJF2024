@@ -5,10 +5,9 @@
 
 [node name="Tut Level" type="Node2D"]
 
+[node name="AnimatableBody2D" parent="." instance=ExtResource("2_nsajr")]
+position = Vector2(0, 26)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_wb1pk")]
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-zoom = Vector2(4, 4)
-
-[node name="AnimatableBody2D" parent="." instance=ExtResource("2_nsajr")]
-position = Vector2(0, 26)
