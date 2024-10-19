@@ -21,12 +21,10 @@ func _on_body_entered(body):
 		otherPlayer = cat
 	count += 1
 	print("You died!")
-	Engine.time_scale = 0.5
 	#body.get_node("CollisionShape2D").set_disabled.call_deferred(true)
 	timer.start()
 
 func _on_timer_timeout():
-	Engine.time_scale = 1
 	currentHealth -= 1
 	
 	#player.get_node("CollisionShape2D").disabled = false
