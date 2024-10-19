@@ -9,9 +9,11 @@ var count = 0
 
 var maxHealth = 5
 @onready var currentHealth: int = maxHealth
+signal healthChanged
 
 
 func _on_body_entered(body):
+	healthChanged.emit()
 	if body == cat:
 		player = cat
 		otherPlayer = bunny
