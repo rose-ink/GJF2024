@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0a1jlhv8wshn"]
+[gd_scene load_steps=14 format=3 uid="uid://d0a1jlhv8wshn"]
 
 [ext_resource type="Texture2D" uid="uid://dhkt4eo7yghsn" path="res://Assets/grass tileset.png" id="1_ghult"]
 [ext_resource type="Texture2D" uid="uid://cs5ooshgene5f" path="res://Assets/tileset tunnels.png" id="2_ty4m5"]
 [ext_resource type="Texture2D" uid="uid://hgg6lnch5dlp" path="res://Assets/bg sky tileset.png" id="3_04n3r"]
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_k1dk3"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
+[ext_resource type="PackedScene" uid="uid://0faic0l1a7f4" path="res://Scenes/health.tscn" id="8_s063y"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
 
@@ -186,7 +187,8 @@ limit_bottom = 150
 limit_smoothed = true
 
 [node name="Kill Zone" parent="." instance=ExtResource("9_xc8wa")]
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone"]
 shape = SubResource("WorldBoundaryShape2D_flic1")
+
+[node name="Health" parent="." instance=ExtResource("8_s063y")]

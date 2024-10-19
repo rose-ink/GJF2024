@@ -7,6 +7,10 @@ var player = cat
 var otherPlayer = bunny
 var count = 0
 
+var maxHealth = 5
+@onready var currentHealth: int = maxHealth
+
+
 func _on_body_entered(body):
 	if body == cat:
 		player = cat
