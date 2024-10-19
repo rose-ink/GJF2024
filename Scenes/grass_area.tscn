@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://d0a1jlhv8wshn"]
+[gd_scene load_steps=44 format=3 uid="uid://d0a1jlhv8wshn"]
 
 [ext_resource type="Texture2D" uid="uid://dhkt4eo7yghsn" path="res://Assets/grass tileset.png" id="1_ghult"]
 [ext_resource type="PackedScene" uid="uid://cjte834aq7e72" path="res://Scenes/game_manager.tscn" id="1_op0bp"]
@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
-[ext_resource type="PackedScene" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
+[ext_resource type="PackedScene" uid="uid://dtiussc78k8bo" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
 [ext_resource type="Script" path="res://Scripts/healthBar2.0.gd" id="11_1fnpn"]
 [ext_resource type="PackedScene" uid="uid://t20j60rc62f" path="res://Scenes/fishkey.tscn" id="11_ro07h"]
 [ext_resource type="PackedScene" uid="uid://b68uffx4c68ww" path="res://Scenes/carrotkey.tscn" id="12_4wv51"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="13_1rf45"]
 [ext_resource type="PackedScene" uid="uid://dnwitrrm2aoya" path="res://Scripts/timer.tscn" id="14_hrixd"]
+[ext_resource type="Texture2D" uid="uid://cm4gxraq7n27j" path="res://Assets/Win Screen.png" id="14_mu6n8"]
 
 [sub_resource type="GDScript" id="GDScript_iqrf4"]
 script/source = "extends Node
@@ -500,6 +501,9 @@ _data = {
 "up4": SubResource("Animation_83x5o")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fashp"]
+size = Vector2(148, 61)
+
 [node name="Grass Area" type="Node2D"]
 
 [node name="Game Manager" parent="." instance=ExtResource("1_op0bp")]
@@ -515,11 +519,11 @@ script = SubResource("GDScript_iqrf4")
 
 [node name="bunny" parent="Players" instance=ExtResource("3_k1dk3")]
 unique_name_in_owner = true
-position = Vector2(0, 8)
+position = Vector2(420, -616)
 
 [node name="cat" parent="Players" instance=ExtResource("4_pv4j0")]
 unique_name_in_owner = true
-position = Vector2(24, 4)
+position = Vector2(444, -620)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7p7gy")
@@ -630,4 +634,17 @@ autoplay = "up4"
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
+[node name="win" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+position = Vector2(513, 384)
+texture = ExtResource("14_mu6n8")
+
 [node name="Timer" parent="CanvasLayer2" instance=ExtResource("14_hrixd")]
+
+[node name="win area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="win area"]
+position = Vector2(571, -559.5)
+shape = SubResource("RectangleShape2D_fashp")
+
+[connection signal="body_entered" from="win area" to="Game Manager" method="_on_win_area_body_entered"]

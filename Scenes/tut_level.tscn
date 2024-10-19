@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="5_vt1cv"]
 [ext_resource type="Texture2D" uid="uid://uikvfxapd30y" path="res://Assets/carrot key still.png" id="6_t1343"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="7_lke4k"]
-[ext_resource type="PackedScene" uid="uid://bxvypof8xb82y" path="res://teleport.tscn" id="8_sjpxl"]
+[ext_resource type="PackedScene" uid="uid://bxvypof8xb82y" path="res://Scenes/teleport.tscn" id="8_sjpxl"]
 [ext_resource type="Script" path="res://Scripts/teleport2.gd" id="9_q1cjj"]
 
 [sub_resource type="Animation" id="Animation_3fq7y"]
