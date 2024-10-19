@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://ddmbpwgqevmit"]
+[gd_scene load_steps=15 format=3 uid="uid://ddmbpwgqevmit"]
 
 [ext_resource type="Texture2D" uid="uid://cjfvqhrk13qmq" path="res://Assets/fish key still.png" id="1_60sab"]
-[ext_resource type="Script" path="res://Scripts/cat.gd" id="1_kppkc"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="2_rgpu8"]
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_ji1lu"]
 [ext_resource type="PackedScene" uid="uid://j3kn748jrtl5" path="res://Scenes/tile_map.tscn" id="3_wotsg"]
@@ -54,11 +53,11 @@ _data = {
 distance = -67.0
 
 [node name="Tut Level" type="Node2D"]
-script = ExtResource("1_kppkc")
 
 [node name="cat" parent="." instance=ExtResource("2_rgpu8")]
 
 [node name="bunny" parent="." instance=ExtResource("3_ji1lu")]
+position = Vector2(0, 4)
 
 [node name="Instructions" type="Node" parent="."]
 
