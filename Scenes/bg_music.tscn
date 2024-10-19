@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8vyxnq1hhbkq"]
+
+[ext_resource type="AudioStream" uid="uid://b4m63te706akb" path="res://Assets/GJ BG game music.mp3" id="1_omtl7"]
+
+[node name="BG Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_omtl7")
+autoplay = true
+bus = &"Music"
