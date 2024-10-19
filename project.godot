@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Critter Clamber"
 
+[gui]
+
+theme/default_theme_scale=8.0
+theme/custom_font="res://Fonts/PixelOperator8.ttf"
+
 [input]
 
 bunny_jump={

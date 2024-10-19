@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://brqreuwnsvp1d"]
+
+[ext_resource type="Texture2D" uid="uid://cosd0iyshpxao" path="res://Assets/treat.png" id="1_xqrgx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gap8v"]
+atlas = ExtResource("1_xqrgx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h43wh"]
+atlas = ExtResource("1_xqrgx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lwll"]
+atlas = ExtResource("1_xqrgx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4rxd"]
+atlas = ExtResource("1_xqrgx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vx0ad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gap8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h43wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lwll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4rxd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rppr3"]
+radius = 7.0
+
+[node name="Treat" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vx0ad")
+autoplay = "default"
+frame = 3
+frame_progress = 0.2377
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rppr3")
+
+[node name="Pickup Sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Pickup Sound")

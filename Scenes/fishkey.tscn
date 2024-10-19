@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://drmsxebsjpjeq"]
+
+[ext_resource type="Texture2D" uid="uid://b7wx41vqm7p7g" path="res://Assets/fish key.png" id="1_l7tbs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j16ii"]
+atlas = ExtResource("1_l7tbs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfatt"]
+atlas = ExtResource("1_l7tbs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkv8o"]
+atlas = ExtResource("1_l7tbs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3x54"]
+atlas = ExtResource("1_l7tbs")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vx0ad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j16ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfatt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkv8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3x54")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rppr3"]
+radius = 8.0
+
+[node name="Fish Key" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vx0ad")
+autoplay = "default"
+frame = 3
+frame_progress = 0.897468
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rppr3")
+
+[node name="Pickup Sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Pickup Sound")
