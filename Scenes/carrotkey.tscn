@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b68uffx4c68ww"]
+
+[ext_resource type="Texture2D" uid="uid://g18v6a14hggg" path="res://Assets/carrot key.png" id="1_m1rfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs7c6"]
+atlas = ExtResource("1_m1rfn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ughuu"]
+atlas = ExtResource("1_m1rfn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldm5g"]
+atlas = ExtResource("1_m1rfn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n1vo"]
+atlas = ExtResource("1_m1rfn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ufvfq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs7c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ughuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldm5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n1vo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Carrot Key" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ufvfq")
+frame_progress = 0.6997
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Pickup Sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
