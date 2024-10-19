@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cs5ooshgene5f" path="res://Assets/tileset tunnels.png" id="2_ty4m5"]
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_k1dk3"]
 [ext_resource type="Script" path="res://Scripts/bunny.gd" id="4_d6857"]
-[ext_resource type="PackedScene" uid="uid://beh61bk8eqq73" path="res://Scenes/cat.tscn" id="4_pv4j0"]
+[ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
 [ext_resource type="Script" path="res://Scripts/cat.gd" id="5_d46bg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b5dl6"]
