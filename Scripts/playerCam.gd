@@ -14,6 +14,6 @@ func _process(_delta):
 	
 	var zoomFac1 = abs(player1.global_position.x - player2.global_position.x)/2
 	var zoomFac2 = abs(player1.global_position.y - player2.global_position.y)/2
-	var zoomFac = (12000.0/min(max(max(zoomFac1, zoomFac2), 20),93))**0.2
+	var zoomFac = (12000.0/min(max(max(zoomFac1, zoomFac2), 20),115))**0.35
 	
 	zoom = Vector2(zoomFac, zoomFac)
