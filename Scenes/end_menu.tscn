@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2t7i1bqbdv2r"]
+
+[ext_resource type="Texture2D" uid="uid://cu203388ti3go" path="res://Assets/lose screen no words.png" id="1_1rf68"]
+[ext_resource type="Script" path="res://Scripts/end_menu.gd" id="1_tfhdf"]
+[ext_resource type="Texture2D" uid="uid://b81pl0o0pnei3" path="res://Assets/Win Screen no words.png" id="2_jmamt"]
+[ext_resource type="Script" path="res://Scripts/Restart.gd" id="4_qwgf5"]
+
+[node name="End Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfhdf")
+
+[node name="Lose Screen" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("1_1rf68")
+
+[node name="You Lose" type="Label" parent="Lose Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -240.0
+offset_right = 448.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.52549, 0, 0.0392157, 1)
+text = "You lose!"
+horizontal_alignment = 1
+
+[node name="Win Screen" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("2_jmamt")
+
+[node name="You win!" type="Label" parent="Win Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -230.0
+offset_right = 448.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.52549, 0, 0.0392157, 1)
+text = "You win!"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = -36.0
+offset_right = 259.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+disabled = true
+text = "Restart"
+script = ExtResource("4_qwgf5")
+
+[node name="Quit to main menu" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.0
+offset_top = 145.0
+offset_right = 259.0
+offset_bottom = 277.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+disabled = true
+text = "Quit to 
+main menu"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit to main menu" to="." method="_on_quit_to_main_menu_pressed"]
