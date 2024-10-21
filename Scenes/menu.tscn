@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpjhvvyu7whlk"]
+
+[ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="1_3y2xu"]
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_l5gpr"]
+[ext_resource type="Texture2D" uid="uid://ca3rpyracd1t5" path="res://Assets/button selected.png" id="2_14y6l"]
+[ext_resource type="FontFile" uid="uid://6mavqkuq22jb" path="res://Fonts/PixelOperator8-Bold.ttf" id="2_63a5b"]
+[ext_resource type="Texture2D" uid="uid://c2jfqfql1iybt" path="res://Assets/Main Menu.PNG" id="4_ofha3"]
+[ext_resource type="Script" path="res://Scenes/Play.gd" id="5_3ns87"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5gpr")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -330.0
+offset_top = 30.0
+offset_right = 330.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.831373, 0.807843, 0.647059, 1)
+theme_override_colors/font_shadow_color = Color(0.341176, 0.572549, 0.243137, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_63a5b")
+theme_override_font_sizes/font_size = 96
+text = "Critter 
+Clamber"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -118.0
+offset_right = 58.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_3y2xu")
+texture_pressed = ExtResource("2_14y6l")
+texture_hover = ExtResource("2_14y6l")
+texture_focused = ExtResource("2_14y6l")
+script = ExtResource("5_3ns87")
+
+[node name="Label" type="Label" parent="Buttons/VBoxContainer/Play"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 6.0
+offset_right = 218.0
+offset_bottom = 62.0
+theme_override_font_sizes/font_size = 48
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_3y2xu")
+texture_pressed = ExtResource("2_14y6l")
+texture_hover = ExtResource("2_14y6l")
+texture_focused = ExtResource("2_14y6l")
+
+[node name="Label" type="Label" parent="Buttons/VBoxContainer/Exit"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 218.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 48
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_3y2xu")
+texture_pressed = ExtResource("2_14y6l")
+texture_hover = ExtResource("2_14y6l")
+texture_focused = ExtResource("2_14y6l")
+
+[node name="Label" type="Label" parent="Buttons/VBoxContainer/Credits"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 245.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(494, 410)
+texture = ExtResource("4_ofha3")
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

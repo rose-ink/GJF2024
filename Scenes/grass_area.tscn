@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
-[ext_resource type="PackedScene" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
+[ext_resource type="PackedScene" uid="uid://dtiussc78k8bo" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
 [ext_resource type="Script" path="res://Scripts/healthBar2.0.gd" id="11_1fnpn"]
 [ext_resource type="PackedScene" uid="uid://t20j60rc62f" path="res://Scenes/fishkey.tscn" id="11_ro07h"]
 [ext_resource type="PackedScene" uid="uid://b68uffx4c68ww" path="res://Scenes/carrotkey.tscn" id="12_4wv51"]
