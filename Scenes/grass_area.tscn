@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://t20j60rc62f" path="res://Scenes/fishkey.tscn" id="11_ro07h"]
 [ext_resource type="PackedScene" uid="uid://b68uffx4c68ww" path="res://Scenes/carrotkey.tscn" id="12_4wv51"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="13_1rf45"]
-[ext_resource type="PackedScene" uid="uid://dnwitrrm2aoya" path="res://Scripts/timer.tscn" id="14_hrixd"]
+[ext_resource type="PackedScene" uid="uid://dnwitrrm2aoya" path="res://Scenes/timer.tscn" id="14_hrixd"]
 [ext_resource type="Texture2D" uid="uid://cm4gxraq7n27j" path="res://Assets/Win Screen.png" id="14_mu6n8"]
 [ext_resource type="Texture2D" uid="uid://blpjgulbw8yib" path="res://Assets/lose screen.png" id="16_ighh0"]
 

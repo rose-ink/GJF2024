@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpjhvvyu7whlk"]
 
 [ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="1_3y2xu"]
-[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_l5gpr"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_l5gpr"]
 [ext_resource type="Texture2D" uid="uid://ca3rpyracd1t5" path="res://Assets/button selected.png" id="2_14y6l"]
 [ext_resource type="FontFile" uid="uid://6mavqkuq22jb" path="res://Fonts/PixelOperator8-Bold.ttf" id="2_63a5b"]
 [ext_resource type="Texture2D" uid="uid://c2jfqfql1iybt" path="res://Assets/Main Menu.PNG" id="4_ofha3"]
-[ext_resource type="Script" path="res://Scenes/Play.gd" id="5_3ns87"]
+[ext_resource type="Script" path="res://Scripts/Play.gd" id="5_3ns87"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
