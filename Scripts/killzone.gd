@@ -50,9 +50,9 @@ func _on_timer_timeout():
 		player.position = otherPlayer.position
 	
 	if currentHealth <= 0:
+		Engine.time_scale = .5
 		get_tree().change_scene_to_file("res://Scenes/lose_menu.tscn")
 	healthChanged.emit()
 	
 	count = 0
-	
-	#get_tree().reload_current_scene()
+
