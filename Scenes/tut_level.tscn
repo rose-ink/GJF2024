@@ -117,7 +117,7 @@ offset_right = 793.0
 offset_bottom = -83.0
 theme_override_constants/line_spacing = 1
 theme_override_font_sizes/font_size = 8
-text = "The cat collects the fish ===>"
+text = "The cat will collect the fish ===>"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -128,7 +128,7 @@ offset_right = 800.0
 offset_bottom = 65.0
 theme_override_constants/line_spacing = 1
 theme_override_font_sizes/font_size = 8
-text = "The bunny collects the carrot ===>"
+text = "The bunny will collect the carrot ===>"
 horizontal_alignment = 1
 autowrap_mode = 2
 

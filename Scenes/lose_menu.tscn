@@ -21,6 +21,7 @@ layout_mode = 2
 offset_right = 1024.0
 offset_bottom = 768.0
 texture = ExtResource("2_tfbb5")
+expand_mode = 3
 
 [node name="You win!" type="Label" parent="Lose Screen"]
 layout_mode = 1
