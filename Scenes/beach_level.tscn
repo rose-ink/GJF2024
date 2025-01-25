@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://13f7ybyylbuy"]
+
+[ext_resource type="PackedScene" uid="uid://dm6am73hkvxmn" path="res://Scenes/beach_tile_map.tscn" id="1_4yo6l"]
+
+[node name="Beach Level" type="Node2D"]
+
+[node name="Base" parent="." instance=ExtResource("1_4yo6l")]
+
+[node name="clouds" parent="Base" index="1"]
+tile_map_data = PackedByteArray()
+
+[editable path="Base"]
