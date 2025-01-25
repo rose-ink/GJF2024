@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ddmbpwgqevmit"]
+[gd_scene load_steps=19 format=4 uid="uid://ddmbpwgqevmit"]
 
 [ext_resource type="Texture2D" uid="uid://cjfvqhrk13qmq" path="res://Assets/fish key still.png" id="1_60sab"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="2_rgpu8"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bxvypof8xb82y" path="res://Scenes/teleport.tscn" id="8_sjpxl"]
 [ext_resource type="Script" path="res://Scripts/teleport2.gd" id="9_q1cjj"]
 [ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="11_gjtok"]
+[ext_resource type="Script" path="res://Scripts/tut_killzone.gd" id="11_tw821"]
 [ext_resource type="Texture2D" uid="uid://ca3rpyracd1t5" path="res://Assets/button selected.png" id="12_iuen2"]
 [ext_resource type="Script" path="res://Scripts/Skip.gd" id="13_qm7a6"]
 
@@ -179,6 +180,7 @@ collision_mask = 2
 script = ExtResource("9_q1cjj")
 
 [node name="Kill Zone" parent="." instance=ExtResource("5_e45wh")]
+script = ExtResource("11_tw821")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone"]
 shape = SubResource("WorldBoundaryShape2D_8vtyl")
