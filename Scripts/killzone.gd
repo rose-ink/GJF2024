@@ -33,7 +33,7 @@ func _on_body_entered(body):
 		player = bunny
 		otherPlayer = cat
 	count += 1
-	print("You died!")
+	#print("You died!")
 	#body.get_node("CollisionShape2D").set_disabled.call_deferred(true)
 	timer.start()
 
