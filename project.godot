@@ -35,7 +35,7 @@ project/assembly_name="Critter Clamber"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/multiplayer_input/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
