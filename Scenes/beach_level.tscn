@@ -6,7 +6,4 @@
 
 [node name="Base" parent="." instance=ExtResource("1_4yo6l")]
 
-[node name="clouds" parent="Base" index="1"]
-tile_map_data = PackedByteArray()
-
 [editable path="Base"]

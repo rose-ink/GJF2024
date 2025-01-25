@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=4 uid="uid://dm6am73hkvxmn"]
+[gd_scene load_steps=2 format=3 uid="uid://dm6am73hkvxmn"]
 
 [ext_resource type="TileSet" uid="uid://pewqaq5cyowo" path="res://Assets/beach_tile_map.tres" id="1_ny5iy"]
 
@@ -15,7 +15,6 @@ tile_set = ExtResource("1_ny5iy")
 [node name="clouds" type="TileMapLayer" parent="."]
 z_index = -4
 use_parent_material = true
-tile_map_data = PackedByteArray("AADh/wAAAgADAAEAAADm/w0AAgACAAEAAADr//T/AgACAAAAAADx/woAAgACAAEAAAD2//T/AgADAAEAAAD2/w0AAgACAAAAAAD9//T/AgACAAAAAAAFAPT/AgACAAIAAAAFAAwAAgADAAEAAAASAPP/AgACAAEAAAAaAAAAAgACAAAAAAAbAAoAAgACAAAAAAAcAPX/AgADAAEAAAAcAP7/AgADAAEAAAAgAPz/AgADAAEAAAAgAAkAAgACAAAAAAAjAAYAAgACAAEAAAAmAAQAAgACAAEAAAAmAAYAAgADAAEAAAAqAAwAAgACAAIAAAAsAPn/AgACAAEAAAA=")
 tile_set = ExtResource("1_ny5iy")
 
 [node name="midground" type="TileMapLayer" parent="."]
