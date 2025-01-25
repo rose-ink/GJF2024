@@ -189,10 +189,10 @@ shape = SubResource("WorldBoundaryShape2D_8vtyl")
 
 [node name="Skip" type="TextureButton" parent="CanvasLayer"]
 z_index = -3
-offset_left = 69.0
-offset_top = 652.0
-offset_right = 329.0
-offset_bottom = 720.0
+offset_left = 65.0
+offset_top = 648.0
+offset_right = 325.0
+offset_bottom = 716.0
 texture_normal = ExtResource("11_gjtok")
 texture_pressed = ExtResource("12_iuen2")
 texture_focused = ExtResource("12_iuen2")
