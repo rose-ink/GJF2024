@@ -151,7 +151,7 @@ texture = ExtResource("1_60sab")
 position = Vector2(812, 43)
 texture = ExtResource("6_t1343")
 
-[node name="TileMap" parent="." instance=ExtResource("3_wotsg")]
+[node name="Grass tilemap" parent="." instance=ExtResource("3_wotsg")]
 position = Vector2(490, -84)
 
 [node name="PlayerCam" parent="." instance=ExtResource("5_vt1cv")]
@@ -200,3 +200,5 @@ text = "Skip"
 
 [connection signal="body_entered" from="Teleport2" to="Teleport2" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Skip" to="CanvasLayer/Skip" method="_on_pressed"]
+
+[editable path="Grass tilemap"]
