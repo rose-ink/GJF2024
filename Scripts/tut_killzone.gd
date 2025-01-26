@@ -3,7 +3,7 @@ extends Area2D
 @onready var bunny = %bunny
 @onready var cat = %cat
 
-
+#hey
 @onready var initalPosition = cat.position
 var player = cat
 var otherPlayer = bunny
