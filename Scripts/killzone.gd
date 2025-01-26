@@ -18,8 +18,7 @@ func _on_body_entered(body):
 	if body == cat:
 		player = cat
 		otherPlayer = bunny
-		
-		
+
 		var bodies = 1
 		while (bodies > 0):
 			bodies = bunny.get_node("Area2D").get_overlapping_bodies().size()
@@ -33,7 +32,7 @@ func _on_body_entered(body):
 		player = bunny
 		otherPlayer = cat
 	count += 1
-	#print("You died!")
+	print(count)
 	#body.get_node("CollisionShape2D").set_disabled.call_deferred(true)
 	timer.start()
 

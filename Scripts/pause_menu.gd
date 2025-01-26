@@ -1,6 +1,10 @@
 extends Control
 @onready var pause_menu = $"."
 
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		pause()
+	
 func resume():
 	print("at resume")
 	pause_menu.visible = false
@@ -16,7 +20,3 @@ func _on_resume_pressed():
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-
-func _physics_process(_delta):
-	if Input.is_action_just_pressed("ui_cancel"):
-		pause()
