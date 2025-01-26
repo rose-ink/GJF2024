@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=4 uid="uid://13f7ybyylbuy"]
+[gd_scene load_steps=2 format=4 uid="uid://d4hq31n2hhlqs"]
 
-[ext_resource type="PackedScene" uid="uid://dm6am73hkvxmn" path="res://Scenes/beach_tile_map.tscn" id="1_4yo6l"]
+[ext_resource type="PackedScene" uid="uid://bfnqjt4i16eyn" path="res://Scenes/beach_tile_map.tscn" id="1_4yo6l"]
 
 [node name="Beach Level" type="Node2D"]
 

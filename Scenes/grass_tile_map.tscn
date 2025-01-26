@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=4 uid="uid://j3kn748jrtl5"]
+[gd_scene load_steps=2 format=4 uid="uid://d2tns3bnprapv"]
 
-[ext_resource type="TileSet" uid="uid://3o7n1hohliwe" path="res://Assets/grass_tile_map.tres" id="1_4r6mg"]
+[ext_resource type="TileSet" path="res://Assets/grass_tile_map.tres" id="1_4r6mg"]
 
 [node name="bg" type="TileMapLayer"]
 z_index = -5

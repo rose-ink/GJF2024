@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm6am73hkvxmn"]
+[gd_scene load_steps=2 format=3 uid="uid://bfnqjt4i16eyn"]
 
-[ext_resource type="TileSet" uid="uid://pewqaq5cyowo" path="res://Assets/beach_tile_map.tres" id="1_ny5iy"]
+[ext_resource type="TileSet" uid="uid://b16hxuqq8wxdl" path="res://Assets/beach_tile_map.tres" id="1_ny5iy"]
 
 [node name="Base" type="TileMapLayer"]
 z_index = -5

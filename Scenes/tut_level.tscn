@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cjfvqhrk13qmq" path="res://Assets/fish key still.png" id="1_60sab"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="2_rgpu8"]
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_ji1lu"]
-[ext_resource type="PackedScene" uid="uid://j3kn748jrtl5" path="res://Scenes/grass_tile_map.tscn" id="3_wotsg"]
+[ext_resource type="PackedScene" uid="uid://d2tns3bnprapv" path="res://Scenes/grass_tile_map.tscn" id="3_wotsg"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="5_e45wh"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="5_vt1cv"]
 [ext_resource type="Texture2D" uid="uid://uikvfxapd30y" path="res://Assets/carrot key still.png" id="6_t1343"]

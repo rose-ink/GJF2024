@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0a1jlhv8wshn"]
+[gd_scene load_steps=44 format=3 uid="uid://d0a1jlhv8wshn"]
 
 [ext_resource type="Texture2D" uid="uid://dhkt4eo7yghsn" path="res://Assets/grass tileset.png" id="1_ghult"]
 [ext_resource type="PackedScene" uid="uid://cjte834aq7e72" path="res://Scenes/game_manager.tscn" id="1_op0bp"]
@@ -13,7 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://t20j60rc62f" path="res://Scenes/fishkey.tscn" id="11_ro07h"]
 [ext_resource type="PackedScene" uid="uid://b68uffx4c68ww" path="res://Scenes/carrotkey.tscn" id="12_4wv51"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="13_1rf45"]
-[ext_resource type="PackedScene" uid="uid://dnwitrrm2aoya" path="res://Scenes/timer.tscn" id="14_hrixd"]
+[ext_resource type="PackedScene" path="res://Scenes/timer.tscn" id="14_hrixd"]
+[ext_resource type="PackedScene" uid="uid://b4n1xf8m30apd" path="res://Scenes/pause_menu.tscn" id="15_67tqy"]
 
 [sub_resource type="GDScript" id="GDScript_iqrf4"]
 script/source = "extends Node
@@ -432,6 +433,9 @@ offset_top = 20.0
 offset_right = 460.0
 offset_bottom = 100.0
 script = ExtResource("11_1fnpn")
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("15_67tqy")]
+visible = false
 
 [node name="Fish Key" parent="." instance=ExtResource("11_ro07h")]
 position = Vector2(470, -458)
