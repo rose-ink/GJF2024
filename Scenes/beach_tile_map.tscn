@@ -23,6 +23,7 @@ tile_set = ExtResource("1_ny5iy")
 
 [node name="midground" type="TileMapLayer" parent="."]
 use_parent_material = true
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 5, 0, 1, 0, 0, 0, 0, 0)
 tile_set = ExtResource("1_ny5iy")
 
 [node name="tunnels" type="TileMapLayer" parent="."]

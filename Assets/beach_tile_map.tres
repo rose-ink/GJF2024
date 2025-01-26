@@ -100,7 +100,7 @@ texture = ExtResource("3_u6118")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gsxcb"]
 texture = ExtResource("4_wfjlt")
 0:0/animation_columns = 6
-0:0/animation_speed = 2.0
+0:0/animation_speed = 1.5
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/animation_frame_2/duration = 1.0
@@ -109,37 +109,34 @@ texture = ExtResource("4_wfjlt")
 0:0/animation_frame_5/duration = 1.0
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkn8e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_erayr"]
 texture = ExtResource("5_dllqp")
 0:0/animation_columns = 1
-0:0/animation_speed = 2.0
+0:0/animation_speed = 1.5
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/animation_frame_2/duration = 1.0
 0:0/animation_frame_3/duration = 1.0
 0:0/animation_frame_4/duration = 1.0
 0:0/animation_frame_5/duration = 1.0
-0:0/animation_frame_6/duration = 1.0
 0:0/0 = 0
 1:0/animation_columns = 1
-1:0/animation_speed = 2.0
+1:0/animation_speed = 1.5
 1:0/animation_frame_0/duration = 1.0
 1:0/animation_frame_1/duration = 1.0
 1:0/animation_frame_2/duration = 1.0
 1:0/animation_frame_3/duration = 1.0
 1:0/animation_frame_4/duration = 1.0
 1:0/animation_frame_5/duration = 1.0
-1:0/animation_frame_6/duration = 1.0
 1:0/0 = 0
 2:0/animation_columns = 1
-2:0/animation_speed = 2.0
+2:0/animation_speed = 1.5
 2:0/animation_frame_0/duration = 1.0
 2:0/animation_frame_1/duration = 1.0
 2:0/animation_frame_2/duration = 1.0
 2:0/animation_frame_3/duration = 1.0
 2:0/animation_frame_4/duration = 1.0
 2:0/animation_frame_5/duration = 1.0
-2:0/animation_frame_6/duration = 1.0
 2:0/0 = 0
 
 [resource]
@@ -149,4 +146,4 @@ sources/1 = SubResource("TileSetAtlasSource_iqep5")
 sources/2 = SubResource("TileSetAtlasSource_sv8er")
 sources/0 = SubResource("TileSetAtlasSource_b5dl6")
 sources/3 = SubResource("TileSetAtlasSource_gsxcb")
-sources/4 = SubResource("TileSetAtlasSource_pkn8e")
+sources/5 = SubResource("TileSetAtlasSource_erayr")
