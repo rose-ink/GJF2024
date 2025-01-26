@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=4 uid="uid://d4hq31n2hhlqs"]
+[gd_scene load_steps=10 format=4 uid="uid://13f7ybyylbuy"]
 
 [ext_resource type="PackedScene" uid="uid://bfnqjt4i16eyn" path="res://Scenes/beach_tile_map.tscn" id="1_4yo6l"]
+[ext_resource type="PackedScene" uid="uid://dtiussc78k8bo" path="res://Scenes/heart_container.tscn" id="2_126u1"]
+[ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="2_ehxa1"]
+[ext_resource type="Script" path="res://Scripts/healthBar2.0.gd" id="3_ebt8n"]
+[ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="3_rbnrn"]
+[ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="4_fxr8a"]
+[ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="5_plqqi"]
+[ext_resource type="PackedScene" uid="uid://b4n1xf8m30apd" path="res://Scenes/pause_menu.tscn" id="8_05egu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lfxmk"]
+distance = -51.0
 
 [node name="Beach Level" type="Node2D"]
 
@@ -11,5 +21,45 @@ tile_map_data = PackedByteArray("AAAAAP//AwAAAAAAAAD3////AwAAAAAAAAD4////AwAAAAA
 
 [node name="midground" parent="Base" index="3"]
 tile_map_data = PackedByteArray("AAAAAP//BQABAAAAAAD/////BQABAAAAAAD+////BQABAAAAAAD9////BQABAAAAAAD8////BQABAAAAAAD7////BQABAAAAAAD6////BQABAAAAAAABAP//BQABAAAAAAACAP//BQABAAAAAAADAP//BQABAAAAAAAEAP//BQABAAAAAAAFAP//BQABAAAAAAD5////BQABAAAAAAD4////BQABAAAAAAD3////BQAAAAAAAAAGAP//BQABAAAAAAAHAP//AAAEAAEAAAAIAP//AAAEAAEAAAAJAP//AAAEAAEAAAAKAP//AAAEAAEAAAALAP//AAAEAAEAAAAMAP//AAAEAAEAAAANAP//AAAEAAEAAAAOAP7/AAADAAIAAAAOAP3/AAADAAIAAAAOAPz/AAADAAEAAAAPAPz/AAAEAAEAAAAQAPz/AAAEAAAAAAARAPz/AAAFAAEAAAARAP3/AAAFAAIAAAARAP7/AAAFAAIAAAARAP//AAAFAAIAAAARAAAAAAAFAAIAAAARAAEAAAAFAAIAAAARAAIAAAAFAAIAAAAPAP3/AAAEAAIAAAAPAP7/AAAEAAIAAAAQAP7/AAAEAAIAAAAQAP3/AAAEAAIAAAAQAP//AAAEAAIAAAAPAP//AAAEAAIAAAAOAP//AAAEAAIAAAAOAAAAAAAEAAIAAAAOAAEAAAAEAAIAAAAPAAEAAAAEAAIAAAAPAAAAAAAEAAIAAAAQAAAAAAAEAAIAAAAQAAEAAAAEAAIAAAAQAAIAAAAEAAIAAAAPAAIAAAAEAAIAAAAOAAIAAAAEAAIAAAANAAIAAAAEAAIAAAAMAAIAAAAEAAIAAAAMAAEAAAAEAAIAAAANAAEAAAAEAAIAAAANAAAAAAAEAAIAAAAMAAAAAAAEAAIAAAALAAAAAAAEAAIAAAAKAAAAAAAEAAIAAAAJAAAAAAAEAAIAAAAIAAAAAAAEAAIAAAAHAAAAAAAEAAIAAAAHAAEAAAAEAAIAAAAIAAEAAAAEAAIAAAAIAAIAAAAEAAIAAAAJAAIAAAAEAAIAAAAKAAIAAAAEAAIAAAAKAAEAAAAEAAIAAAALAAEAAAAEAAIAAAAJAAEAAAAEAAIAAAAHAAIAAAAEAAIAAAALAAIAAAAEAAIAAAAHAAMABQABAAAAAAAIAAMABQABAAAAAAAJAAMABQABAAAAAAAKAAMABQABAAAAAAALAAMABQABAAAAAAAMAAMABQABAAAAAAANAAMABQABAAAAAAAOAAMABQABAAAAAAAPAAMABQABAAAAAAAQAAMABQABAAAAAAARAAMABQABAAAAAAD3//7/AAAEAAAAAAD4//7/AAAEAAAAAAD5//7/AAAEAAAAAAD6//7/AAAEAAAAAAD7//7/AAAEAAEAAAD8//7/AAAEAAAAAAD9//7/AAAEAAAAAAD+//7/AAAEAAEAAAD///7/AAAEAAEAAAAAAP7/AAAEAAEAAAABAP7/AAAEAAAAAAACAP7/AAAEAAAAAAADAP7/AAAEAAAAAAAEAP7/AAAEAAEAAAAFAP7/AAAEAAAAAAAGAP7/AAAEAAAAAAAHAP7/AAAEAAAAAAAIAP7/AAAEAAEAAAAJAP7/AAAEAAAAAAAKAP7/AAAEAAAAAAALAP7/AAAEAAAAAAAMAP7/AAAEAAEAAAANAP7/AAAEAAAAAAA=")
+
+[node name="Players" type="Node" parent="."]
+
+[node name="bunny" parent="Players" instance=ExtResource("2_ehxa1")]
+unique_name_in_owner = true
+position = Vector2(0, -42)
+
+[node name="cat" parent="Players" instance=ExtResource("3_rbnrn")]
+unique_name_in_owner = true
+position = Vector2(2, -46)
+
+[node name="Kill Zone2" parent="." instance=ExtResource("4_fxr8a")]
+position = Vector2(193, -112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone2"]
+position = Vector2(0, 115)
+shape = SubResource("WorldBoundaryShape2D_lfxmk")
+
+[node name="Player Cam" parent="." instance=ExtResource("5_plqqi")]
+limit_bottom = 150
+limit_smoothed = true
+
+[node name="Kill Zone" parent="Player Cam" instance=ExtResource("4_fxr8a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Cam/Kill Zone"]
+position = Vector2(0, 115)
+shape = SubResource("WorldBoundaryShape2D_lfxmk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Health Bar" parent="CanvasLayer" instance=ExtResource("2_126u1")]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 460.0
+offset_bottom = 100.0
+script = ExtResource("3_ebt8n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("8_05egu")]
+visible = false
 
 [editable path="Base"]
