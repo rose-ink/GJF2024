@@ -6,4 +6,7 @@
 
 [node name="Base" parent="." instance=ExtResource("1_4yo6l")]
 
+[node name="midground" parent="Base" index="3"]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 4, 0, 1, 0, 0, 0, 0, 0)
+
 [editable path="Base"]

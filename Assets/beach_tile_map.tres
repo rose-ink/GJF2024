@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://pewqaq5cyowo"]
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://pewqaq5cyowo"]
 
 [ext_resource type="Texture2D" uid="uid://coy62rirk4610" path="res://Assets/beach tileset.png" id="1_2imc8"]
 [ext_resource type="Texture2D" uid="uid://u4vwivoburdj" path="res://Assets/beach tunnels.png" id="2_i1w2u"]
 [ext_resource type="Texture2D" uid="uid://hgg6lnch5dlp" path="res://Assets/bg sky tileset.png" id="3_u6118"]
+[ext_resource type="Texture2D" uid="uid://dn50vxw7x7ya4" path="res://Assets/water front.png" id="4_wfjlt"]
+[ext_resource type="Texture2D" uid="uid://d0p5ci3cw6sv3" path="res://Assets/beach water tiles.png" id="5_dllqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b5dl6"]
 texture = ExtResource("1_2imc8")
@@ -95,9 +97,56 @@ texture = ExtResource("3_u6118")
 2:0/size_in_atlas = Vector2i(2, 1)
 2:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gsxcb"]
+texture = ExtResource("4_wfjlt")
+0:0/animation_columns = 6
+0:0/animation_speed = 2.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pkn8e"]
+texture = ExtResource("5_dllqp")
+0:0/animation_columns = 1
+0:0/animation_speed = 2.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/0 = 0
+1:0/animation_columns = 1
+1:0/animation_speed = 2.0
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/0 = 0
+2:0/animation_columns = 1
+2:0/animation_speed = 2.0
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 4
 sources/1 = SubResource("TileSetAtlasSource_iqep5")
 sources/2 = SubResource("TileSetAtlasSource_sv8er")
 sources/0 = SubResource("TileSetAtlasSource_b5dl6")
+sources/3 = SubResource("TileSetAtlasSource_gsxcb")
+sources/4 = SubResource("TileSetAtlasSource_pkn8e")
