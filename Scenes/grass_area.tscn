@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://d0a1jlhv8wshn"]
+[gd_scene load_steps=45 format=3 uid="uid://d0a1jlhv8wshn"]
 
 [ext_resource type="Texture2D" uid="uid://dhkt4eo7yghsn" path="res://Assets/grass tileset.png" id="1_ghult"]
 [ext_resource type="PackedScene" uid="uid://cjte834aq7e72" path="res://Scenes/game_manager.tscn" id="1_op0bp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_k1dk3"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="4_pv4j0"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
+[ext_resource type="Script" path="res://Scripts/killzone2.gd" id="9_cs5kn"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
 [ext_resource type="PackedScene" uid="uid://dtiussc78k8bo" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
 [ext_resource type="Script" path="res://Scripts/healthBar2.0.gd" id="11_1fnpn"]
@@ -397,6 +398,11 @@ script = SubResource("GDScript_iqrf4")
 unique_name_in_owner = true
 position = Vector2(14, 8)
 
+[node name="BunnyCam" type="Camera2D" parent="Players/bunny"]
+unique_name_in_owner = true
+enabled = false
+zoom = Vector2(5, 5)
+
 [node name="cat" parent="Players" instance=ExtResource("4_pv4j0")]
 unique_name_in_owner = true
 position = Vector2(38, 4)
@@ -416,17 +422,20 @@ layer_3/name = "tunnels"
 layer_3/tile_data = PackedInt32Array(-720880, 196609, 2, -720879, 393217, 0, -720878, 393217, 0, -720877, 393217, 0, -720876, 393217, 0, -720875, 393217, 0, -720874, 393217, 0, -720873, 393217, 0, -720872, 393217, 0, -720871, 393217, 0, -720870, 393217, 0, -720869, 393217, 0, -720868, 393217, 0, -720867, 131073, 2, -1310718, 65536, 1, -1245182, 65536, 2, -1179646, 65536, 3, -1310717, 65536, 1, -1245181, 65536, 2, -1179645, 65536, 3, -1310716, 131072, 1, -1245180, 131072, 2, -1179644, 131072, 3, -1310720, 65536, 1, -1245184, 65536, 2, -1179648, 65536, 3, -1310719, 0, 0, -1245183, 65536, 2, -1179647, 65536, 3, -1245186, 65536, 2, -1179650, 65536, 2, -1114114, 0, 3, -1245185, 65536, 1, -1179649, 65536, 2, -1114113, 65536, 3, -1310724, 65536, 2, -1245188, 0, 2, -1179652, 0, 3, -1310723, 65536, 2, -1245187, 65536, 2, -1179651, 65536, 3, -1310722, 131072, 2, -1376260, 65536, 2, -1376259, 65536, 2, -1376258, 131072, 2, -1376263, 0, 2, -1310727, 0, 3, -1376262, 65536, 2, -1310726, 65536, 3, -1376261, 65536, 2, -1310725, 65536, 3, -1441799, 0, 1, -1441798, 0, 0, -1441797, 65536, 1, -1441796, 65536, 1, -1441795, 0, 0, -1441794, 131072, 1, -2228202, 196609, 2, -2228201, 393217, 0, -2228200, 393217, 0, -2228199, 393217, 0, -2228198, 393217, 0, -2228197, 393217, 0, -2228196, 393217, 0, -2228195, 131073, 2)
 
 [node name="Kill Zone2" parent="." instance=ExtResource("9_xc8wa")]
-position = Vector2(193, -112)
+position = Vector2(193, 291)
+script = ExtResource("9_cs5kn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone2"]
 position = Vector2(0, 115)
 shape = SubResource("WorldBoundaryShape2D_flic1")
 
 [node name="Player Cam" parent="." instance=ExtResource("8_w18pc")]
+unique_name_in_owner = true
 limit_bottom = 150
 limit_smoothed = true
 
 [node name="Kill Zone" parent="Player Cam" instance=ExtResource("9_xc8wa")]
+script = ExtResource("9_cs5kn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player Cam/Kill Zone"]
 position = Vector2(0, 115)
