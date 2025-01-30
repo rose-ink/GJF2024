@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4n1xf8m30apd"]
+[gd_scene load_steps=4 format=3 uid="uid://b4n1xf8m30apd"]
 
 [ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_cojlj"]
 [ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="3_4pypl"]
 [ext_resource type="Texture2D" uid="uid://ca3rpyracd1t5" path="res://Assets/button selected.png" id="4_y22kr"]
-[ext_resource type="Script" path="res://Scripts/Restart.gd" id="5_vsrq6"]
 
 [node name="Pause Menu" type="Control"]
 layout_direction = 1
@@ -46,7 +45,6 @@ scale = Vector2(2, 2)
 texture_normal = ExtResource("3_4pypl")
 texture_hover = ExtResource("4_y22kr")
 texture_focused = ExtResource("4_y22kr")
-script = ExtResource("5_vsrq6")
 
 [node name="Resume" type="Label" parent="Resume"]
 layout_mode = 0

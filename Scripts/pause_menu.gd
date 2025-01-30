@@ -1,23 +1,20 @@
 extends Control
 @onready var pause_menu = $"."
+@onready var resume_button = $Resume
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		#pause()
 		pause()
 	
 func resume():
-	#print("at resume")
-	#pause_menu.visible = false
-	#get_tree().paused = false
+	BgMusic.stream_paused = false
 	pause_menu.hide()
 	Engine.time_scale = 1
 
 func pause():
-	#print("at pause")
-	#pause_menu.visible = true
-	#get_tree().paused = true
 	pause_menu.show()
+	resume_button.grab_focus()
+	BgMusic.stream_paused = true
 	Engine.time_scale = 0
 	
 func _on_resume_pressed():
