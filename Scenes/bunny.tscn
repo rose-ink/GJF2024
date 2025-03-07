@@ -94,8 +94,14 @@ shape = SubResource("CircleShape2D_gjj5w")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_1le2d")
+
+[node name="PositionCheckerTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="PositionCheckerTimer" to="." method="_on_position_checker_timer_timeout"]

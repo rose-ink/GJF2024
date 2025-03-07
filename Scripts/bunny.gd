@@ -1,11 +1,26 @@
 extends CharacterBody2D
 
+signal is_dead
+
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var safe_pos = position
+@onready var area_2d = $Area2D
+@onready var cat = %cat
+@onready var other_player_dead = false
+@onready var pos_timer = $PositionCheckerTimer
+
+@onready var kill_zone = %"Kill Zone"
+
+func _ready():
+	cat.is_dead.connect(cat_is_dead)
+	safe_pos = position
+	pos_timer.start()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -38,3 +53,30 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	#get the last safe position the character was at 
+	
+func _on_position_checker_timer_timeout():
+	if is_on_floor() ==  true:
+		safe_pos = position
+	
+	
+func _on_area_2d_area_entered(_area):
+	is_dead.emit()
+	pos_timer.stop()
+	area_2d.set_deferred("monitoring", false)
+	
+	await get_tree().create_timer(1.0).timeout
+
+	if other_player_dead == true:
+		print("cat is dead")
+		position = safe_pos
+		area_2d.set_deferred("monitoring", true)
+		
+	else:
+		position = safe_pos
+		area_2d.set_deferred("monitoring", true)
+		pos_timer.start()
+		
+func cat_is_dead():
+	other_player_dead = true

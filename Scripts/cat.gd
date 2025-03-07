@@ -1,12 +1,25 @@
 extends CharacterBody2D
 
+signal is_dead
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var bunny = %bunny
+@onready var safe_pos = position
+@onready var area_2d = $Area2D
+@onready var other_player_dead = false
+@onready var pos_timer = $PositionCheckerTimer
+
+
+func _ready():
+	bunny.is_dead.connect(bunny_is_dead)
+	safe_pos = position
+	pos_timer.start()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -18,7 +31,6 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY * 1.15
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("cat_left", "cat_right")
 	if direction < 0:
 		animated_sprite_2d.flip_h = false
@@ -39,3 +51,29 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+#get the last safe position the character was at 
+func _on_position_checker_timer_timeout():
+	if is_on_floor() ==  true:
+		safe_pos = position
+	
+#do all the things when a player dies
+func _on_area_2d_area_entered(_area):
+	is_dead.emit()
+	pos_timer.stop()
+	area_2d.set_deferred("monitoring", false)
+	
+	await get_tree().create_timer(1.0).timeout
+
+	if other_player_dead == true:
+		print("bunny is dead")
+		position = safe_pos
+		area_2d.set_deferred("monitoring", true)
+		
+	else:
+		position = safe_pos
+		area_2d.set_deferred("monitoring", true)
+		pos_timer.start()
+
+func bunny_is_dead():
+	other_player_dead = true
