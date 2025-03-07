@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal is_dead
+signal respawned
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -14,12 +15,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var cat = %cat
 @onready var other_player_dead = false
 @onready var pos_timer = $PositionCheckerTimer
-
 @onready var kill_zone = %"Kill Zone"
+@onready var start_pos = position
 
 func _ready():
 	cat.is_dead.connect(cat_is_dead)
-	safe_pos = position
+	cat.respawned.connect(cat_respawned)
 	pos_timer.start()
 
 func _physics_process(delta):
@@ -69,14 +70,24 @@ func _on_area_2d_area_entered(_area):
 	await get_tree().create_timer(1.0).timeout
 
 	if other_player_dead == true:
+		respawn_both()
 		print("cat is dead")
-		position = safe_pos
+		position = start_pos
 		area_2d.set_deferred("monitoring", true)
+		other_player_dead = false
 		
 	else:
 		position = safe_pos
+		respawned.emit()
 		area_2d.set_deferred("monitoring", true)
 		pos_timer.start()
 		
 func cat_is_dead():
 	other_player_dead = true
+	
+func cat_respawned():
+	other_player_dead = false
+	
+#make respawning of both characters smoother, too lazy to rn
+func respawn_both():
+	pass

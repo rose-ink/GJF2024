@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal is_dead
+signal respawned
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -14,11 +15,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var area_2d = $Area2D
 @onready var other_player_dead = false
 @onready var pos_timer = $PositionCheckerTimer
+@onready var start_pos = position
 
 
 func _ready():
 	bunny.is_dead.connect(bunny_is_dead)
-	safe_pos = position
+	bunny.respawned.connect(bunny_respawned)
 	pos_timer.start()
 
 func _physics_process(delta):
@@ -67,13 +69,18 @@ func _on_area_2d_area_entered(_area):
 
 	if other_player_dead == true:
 		print("bunny is dead")
-		position = safe_pos
+		position = start_pos
 		area_2d.set_deferred("monitoring", true)
+		other_player_dead = false
 		
 	else:
 		position = safe_pos
+		respawned.emit()
 		area_2d.set_deferred("monitoring", true)
 		pos_timer.start()
 
 func bunny_is_dead():
 	other_player_dead = true
+	
+func bunny_respawned():
+	other_player_dead = false

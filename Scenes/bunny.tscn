@@ -101,7 +101,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_1le2d")
 
 [node name="PositionCheckerTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="PositionCheckerTimer" to="." method="_on_position_checker_timer_timeout"]
