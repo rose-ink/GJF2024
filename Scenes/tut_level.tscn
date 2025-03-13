@@ -73,7 +73,7 @@ offset_right = -5.0
 offset_bottom = -11.0
 theme_override_constants/line_spacing = 1
 theme_override_font_sizes/font_size = 8
-text = "Use A+D to move the cat "
+text = "Use the left joystick to move the cat "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -84,7 +84,7 @@ offset_right = 130.0
 offset_bottom = -11.0
 theme_override_constants/line_spacing = 1
 theme_override_font_sizes/font_size = 8
-text = "Use the left and right arrow keys to move the bunny "
+text = "Use the right joystick to move the bunny "
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -95,7 +95,7 @@ offset_right = 314.0
 offset_bottom = -33.0
 theme_override_constants/line_spacing = 1
 theme_override_font_sizes/font_size = 8
-text = "Use W/up arrow to jump"
+text = "Use the bottom left button to jump"
 horizontal_alignment = 1
 autowrap_mode = 2
 
