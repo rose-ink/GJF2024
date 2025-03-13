@@ -15,7 +15,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var cat = %cat
 @onready var other_player_dead = false
 @onready var pos_timer = $PositionCheckerTimer
-@onready var kill_zone = %"Kill Zone"
 @onready var start_pos = position
 
 func _ready():

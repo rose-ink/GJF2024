@@ -1,11 +1,11 @@
 extends TextureProgressBar
 
-@onready var kill_zone = $"../../Player Cam/Kill Zone"
+@onready var game_manager = %"Game Manager"
 
 
-#func _ready():
-	#kill_zone.healthChanged.connect(update)
-	#update()
-#
-#func update():
-	#value = kill_zone.currentHealth
+func _ready():
+	game_manager.healthChanged.connect(update)
+	update()
+
+func update():
+	value = game_manager.currentHealth

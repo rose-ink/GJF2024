@@ -1,5 +1,4 @@
 extends Area2D
-@onready var timer = $Timer
 @onready var bunny = %bunny
 @onready var cat = %cat
 
@@ -34,7 +33,6 @@ func _on_body_entered(body):
 	count += 1
 	print("You died!")
 	#body.get_node("CollisionShape2D").set_disabled.call_deferred(true)
-	timer.start()
 
 func _on_timer_timeout():
 	currentHealth -= 1

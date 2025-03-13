@@ -383,6 +383,7 @@ size = Vector2(148, 61)
 [node name="Grass Area" type="Node2D"]
 
 [node name="Game Manager" parent="." instance=ExtResource("1_op0bp")]
+unique_name_in_owner = true
 
 [node name="score label" type="Label" parent="Game Manager"]
 offset_left = 98.0

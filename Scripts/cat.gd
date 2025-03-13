@@ -61,6 +61,7 @@ func _on_position_checker_timer_timeout():
 	
 #do all the things when a player dies
 func _on_area_2d_area_entered(_area):
+	#any killzones that characters need to collide with should  be on collison layer 5 and nothing on collision mask
 	is_dead.emit()
 	pos_timer.stop()
 	area_2d.set_deferred("monitoring", false)
@@ -68,7 +69,6 @@ func _on_area_2d_area_entered(_area):
 	await get_tree().create_timer(1.0).timeout
 
 	if other_player_dead == true:
-		print("bunny is dead")
 		position = start_pos
 		area_2d.set_deferred("monitoring", true)
 		other_player_dead = false
