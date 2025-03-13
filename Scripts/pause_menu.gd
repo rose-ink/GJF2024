@@ -21,6 +21,6 @@ func _on_resume_pressed():
 	resume()
 
 func _on_quit_pressed():
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-	pause()
 	resume()
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	

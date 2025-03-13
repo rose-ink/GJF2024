@@ -1,13 +1,16 @@
-[gd_scene load_steps=18 format=4 uid="uid://ddmbpwgqevmit"]
+[gd_scene load_steps=21 format=4 uid="uid://ddmbpwgqevmit"]
 
 [ext_resource type="Texture2D" uid="uid://cjfvqhrk13qmq" path="res://Assets/fish key still.png" id="1_60sab"]
 [ext_resource type="PackedScene" uid="uid://0tbimbnpx3ly" path="res://Scenes/cat.tscn" id="2_rgpu8"]
 [ext_resource type="PackedScene" uid="uid://bv1v3slqxeyw8" path="res://Scenes/bunny.tscn" id="3_ji1lu"]
 [ext_resource type="PackedScene" uid="uid://d2tns3bnprapv" path="res://Scenes/grass_tile_map.tscn" id="3_wotsg"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="5_e45wh"]
+[ext_resource type="Texture2D" uid="uid://cxnnekoeyqvgl" path="res://Assets/button-map-visual-7.png" id="5_r8cpy"]
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="5_vt1cv"]
+[ext_resource type="Texture2D" uid="uid://bpvrrak8l0bns" path="res://Assets/joystick-visua-left-rightl.png" id="6_lk2dx"]
 [ext_resource type="Texture2D" uid="uid://uikvfxapd30y" path="res://Assets/carrot key still.png" id="6_t1343"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="7_lke4k"]
+[ext_resource type="Texture2D" uid="uid://jir817wsoy84" path="res://Assets/button-map-visual-1.png" id="7_prdyk"]
 [ext_resource type="PackedScene" uid="uid://bxvypof8xb82y" path="res://Scenes/teleport.tscn" id="8_sjpxl"]
 [ext_resource type="Script" path="res://Scripts/teleport2.gd" id="9_q1cjj"]
 [ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="11_gjtok"]
@@ -143,6 +146,17 @@ text = "Collect both items and make it to the end of the level before the timer 
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="how to pause" type="Label" parent="Instructions"]
+offset_left = 991.0
+offset_top = -90.0
+offset_right = 1077.0
+offset_bottom = -46.0
+theme_override_constants/line_spacing = 1
+theme_override_font_sizes/font_size = 8
+text = "Press the top left button to pause!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
 [node name="FishKeyStill" type="Sprite2D" parent="Instructions"]
 position = Vector2(807, -107)
 texture = ExtResource("1_60sab")
@@ -150,6 +164,21 @@ texture = ExtResource("1_60sab")
 [node name="CarrotKeyStill" type="Sprite2D" parent="Instructions"]
 position = Vector2(812, 43)
 texture = ExtResource("6_t1343")
+
+[node name="Button-map-visual-7" type="Sprite2D" parent="Instructions"]
+position = Vector2(333, -56)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_r8cpy")
+
+[node name="Joystick-visua-left-rightl" type="Sprite2D" parent="Instructions"]
+position = Vector2(6, -46)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_lk2dx")
+
+[node name="Button-map-visual-1" type="Sprite2D" parent="Instructions"]
+position = Vector2(1084, -72)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_prdyk")
 
 [node name="Grass tilemap" parent="." instance=ExtResource("3_wotsg")]
 position = Vector2(490, -84)

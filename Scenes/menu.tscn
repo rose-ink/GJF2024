@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwevgpunmjjg3"]
+[gd_scene load_steps=10 format=3 uid="uid://cwevgpunmjjg3"]
 
 [ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="1_3y2xu"]
 [ext_resource type="Script" path="res://Scripts/menu.gd" id="1_l5gpr"]
@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://6mavqkuq22jb" path="res://Fonts/PixelOperator8-Bold.ttf" id="2_63a5b"]
 [ext_resource type="Texture2D" uid="uid://c2jfqfql1iybt" path="res://Assets/Main Menu.PNG" id="4_ofha3"]
 [ext_resource type="Script" path="res://Scripts/Play.gd" id="5_3ns87"]
+[ext_resource type="Texture2D" uid="uid://bfa0umq5klai3" path="res://Assets/joystick-visual-up-down.png" id="7_pmxso"]
+[ext_resource type="Texture2D" uid="uid://dj5mdwid4fvd2" path="res://Assets/button-map-visual-4.png" id="8_i3yc3"]
+
+[sub_resource type="Theme" id="Theme_n0dm3"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -113,6 +117,29 @@ vertical_alignment = 1
 z_index = -1
 position = Vector2(494, 410)
 texture = ExtResource("4_ofha3")
+
+[node name="Joystick-visual-up-down" type="Sprite2D" parent="."]
+position = Vector2(81, 304)
+scale = Vector2(4, 4)
+texture = ExtResource("7_pmxso")
+
+[node name="Button-map-visual-4" type="Sprite2D" parent="."]
+position = Vector2(190, 308)
+scale = Vector2(4, 4)
+texture = ExtResource("8_i3yc3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 368.0
+offset_right = 310.0
+offset_bottom = 464.0
+theme = SubResource("Theme_n0dm3")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Use the joystick to navigate and the middle left button to select."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
