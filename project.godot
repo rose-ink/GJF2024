@@ -13,7 +13,10 @@ config_version=5
 config/name="Critter Clamber"
 run/main_scene="res://Scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 0)
+boot_splash/image="res://images/moonbunny-splash-screen.png"
 config/icon="res://for cc cover.PNG"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
