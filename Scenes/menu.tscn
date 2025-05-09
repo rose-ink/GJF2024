@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://cwevgpunmjjg3"]
 
 [ext_resource type="Texture2D" uid="uid://ccp48vv5jdk0l" path="res://Assets/button.png" id="1_3y2xu"]
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_l5gpr"]
+[ext_resource type="Script" uid="uid://j1t4grjnd80a" path="res://Scripts/menu.gd" id="1_l5gpr"]
 [ext_resource type="Texture2D" uid="uid://ca3rpyracd1t5" path="res://Assets/button selected.png" id="2_14y6l"]
 [ext_resource type="FontFile" uid="uid://6mavqkuq22jb" path="res://Fonts/PixelOperator8-Bold.ttf" id="2_63a5b"]
 [ext_resource type="Texture2D" uid="uid://c2jfqfql1iybt" path="res://Assets/Main Menu.PNG" id="4_ofha3"]
-[ext_resource type="Script" path="res://Scripts/Play.gd" id="5_3ns87"]
+[ext_resource type="Script" uid="uid://bsgawdq25n4dc" path="res://Scripts/Play.gd" id="5_3ns87"]
 [ext_resource type="Texture2D" uid="uid://bfa0umq5klai3" path="res://Assets/joystick-visual-up-down.png" id="7_pmxso"]
 [ext_resource type="Texture2D" uid="uid://dj5mdwid4fvd2" path="res://Assets/button-map-visual-4.png" id="8_i3yc3"]
 
@@ -13,7 +13,6 @@
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -42,21 +41,22 @@ vertical_alignment = 1
 
 [node name="Buttons" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.87
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.87
 offset_left = -202.0
-offset_top = -118.0
+offset_top = -377.16
 offset_right = 58.0
-offset_bottom = 150.0
+offset_bottom = -109.16
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Play" type="TextureButton" parent="Buttons/VBoxContainer"]
 layout_mode = 2

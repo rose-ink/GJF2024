@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl7tyxc427al1"]
 
-[ext_resource type="Script" path="res://Scripts/Timer.gd" id="1_wp64b"]
+[ext_resource type="Script" uid="uid://bw1mh3ybffbvp" path="res://Scripts/Timer.gd" id="1_wp64b"]
 
 [node name="Timer" type="Node"]
 script = ExtResource("1_wp64b")

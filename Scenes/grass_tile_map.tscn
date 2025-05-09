@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://d2tns3bnprapv"]
 
-[ext_resource type="TileSet" path="res://Assets/grass_tile_map.tres" id="1_4r6mg"]
+[ext_resource type="TileSet" uid="uid://3o7n1hohliwe" path="res://Assets/grass_tile_map.tres" id="1_4r6mg"]
 
 [node name="bg" type="TileMapLayer"]
 z_index = -5
@@ -17,6 +17,10 @@ tile_set = ExtResource("1_4r6mg")
 [node name="midground" type="TileMapLayer" parent="."]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAAIAAEAAAABAAEAAAAJAAEAAAABAAEAAAAKAAEAAAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAHAP3/AAABAAEAAAAIAP3/AAABAAEAAAAJAP3/AAABAAEAAAAKAP3/AAABAAEAAAALAP3/AAABAAEAAAAMAP3/AAABAAEAAAADAP7/AAABAAEAAAACAP7/AAABAAEAAAABAP7/AAABAAEAAAACAPr/AAABAAEAAAABAPr/AAABAAEAAAAAAPr/AAABAAEAAAD///r/AAABAAEAAAD+//r/AAABAAEAAAD9//r/AAABAAEAAAA=")
+tile_set = ExtResource("1_4r6mg")
+
+[node name="decor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAGAPv/AwACAAAAAAAGAPz/AwACAAEAAAAMAPv/AwACAAAAAAAMAPz/AwACAAEAAAD+//j/AwACAAAAAAD+//n/AwACAAEAAAD///j/AwABAAAAAAD///n/AwABAAEAAAABAPj/AwABAAAAAAABAPn/AwABAAEAAAAAAPn/AwAAAAEAAAACAPn/AwAAAAAAAAAFAPv/AwADAAAAAAAFAPz/AwADAAEAAAA=")
 tile_set = ExtResource("1_4r6mg")
 
 [node name="tunnels" type="TileMapLayer" parent="."]

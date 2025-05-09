@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b68uffx4c68ww"]
 
-[ext_resource type="Script" path="res://Scripts/carrotkey.gd" id="1_dc1vo"]
+[ext_resource type="Script" uid="uid://bvasjtyi27h31" path="res://Scripts/carrotkey.gd" id="1_dc1vo"]
 [ext_resource type="Texture2D" uid="uid://g18v6a14hggg" path="res://Assets/carrot key.png" id="1_m1rfn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rs7c6"]
@@ -136,8 +136,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8qqwi"]
 _data = {
-"RESET": SubResource("Animation_catfe"),
-"pickup": SubResource("Animation_4gmfs")
+&"RESET": SubResource("Animation_catfe"),
+&"pickup": SubResource("Animation_4gmfs")
 }
 
 [node name="Carrot Key" type="Area2D"]
