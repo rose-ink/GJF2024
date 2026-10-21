@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ng55wgqc3eo4" path="res://Scenes/playercam.tscn" id="8_w18pc"]
 [ext_resource type="PackedScene" uid="uid://bmltqjx78jskp" path="res://Scenes/kill_zone.tscn" id="9_xc8wa"]
 [ext_resource type="PackedScene" uid="uid://dtiussc78k8bo" path="res://Scenes/heart_container.tscn" id="10_f1fhw"]
-[ext_resource type="Script" path="res://Scripts/healthBar2.0.gd" id="11_1fnpn"]
+[ext_resource type="Script" uid="uid://dxorg0nyhay2e" path="res://Scripts/healthBar2.0.gd" id="11_1fnpn"]
 [ext_resource type="PackedScene" uid="uid://t20j60rc62f" path="res://Scenes/fishkey.tscn" id="11_ro07h"]
 [ext_resource type="PackedScene" uid="uid://b68uffx4c68ww" path="res://Scenes/carrotkey.tscn" id="12_4wv51"]
 [ext_resource type="PackedScene" uid="uid://cr2jlwxagkp0d" path="res://Scenes/grass-platform.tscn" id="13_1rf45"]
@@ -145,8 +145,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nrymf"]
 _data = {
-"RESET": SubResource("Animation_53n7m"),
-"up": SubResource("Animation_06578")
+&"RESET": SubResource("Animation_53n7m"),
+&"up": SubResource("Animation_06578")
 }
 
 [sub_resource type="Animation" id="Animation_fh7eq"]
@@ -183,8 +183,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ijb16"]
 _data = {
-"RESET": SubResource("Animation_fh7eq"),
-"up2": SubResource("Animation_fd1vt")
+&"RESET": SubResource("Animation_fh7eq"),
+&"up2": SubResource("Animation_fd1vt")
 }
 
 [sub_resource type="Animation" id="Animation_txwo2"]
@@ -221,8 +221,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8g0qt"]
 _data = {
-"RESET": SubResource("Animation_txwo2"),
-"side": SubResource("Animation_kiajw")
+&"RESET": SubResource("Animation_txwo2"),
+&"side": SubResource("Animation_kiajw")
 }
 
 [sub_resource type="Animation" id="Animation_pr8qq"]
@@ -259,8 +259,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_i5dcg"]
 _data = {
-"RESET": SubResource("Animation_pr8qq"),
-"side2": SubResource("Animation_g8x3m")
+&"RESET": SubResource("Animation_pr8qq"),
+&"side2": SubResource("Animation_g8x3m")
 }
 
 [sub_resource type="Animation" id="Animation_mqg4y"]
@@ -297,8 +297,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cxugf"]
 _data = {
-"RESET": SubResource("Animation_mqg4y"),
-"side pause": SubResource("Animation_cu5kk")
+&"RESET": SubResource("Animation_mqg4y"),
+&"side pause": SubResource("Animation_cu5kk")
 }
 
 [sub_resource type="Animation" id="Animation_x853b"]
@@ -335,8 +335,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lng0p"]
 _data = {
-"RESET": SubResource("Animation_x853b"),
-"up3": SubResource("Animation_fi6yg")
+&"RESET": SubResource("Animation_x853b"),
+&"up3": SubResource("Animation_fi6yg")
 }
 
 [sub_resource type="Animation" id="Animation_dn4ul"]
@@ -373,8 +373,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_efdl0"]
 _data = {
-"RESET": SubResource("Animation_dn4ul"),
-"up4": SubResource("Animation_83x5o")
+&"RESET": SubResource("Animation_dn4ul"),
+&"up4": SubResource("Animation_83x5o")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fashp"]
@@ -469,7 +469,7 @@ position = Vector2(177, -40)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform"]
 libraries = {
-"": SubResource("AnimationLibrary_nrymf")
+&"": SubResource("AnimationLibrary_nrymf")
 }
 autoplay = "up"
 
@@ -478,7 +478,7 @@ position = Vector2(123, -170)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform2"]
 libraries = {
-"": SubResource("AnimationLibrary_ijb16")
+&"": SubResource("AnimationLibrary_ijb16")
 }
 autoplay = "up2"
 
@@ -487,7 +487,7 @@ position = Vector2(191, -327)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform3"]
 libraries = {
-"": SubResource("AnimationLibrary_8g0qt")
+&"": SubResource("AnimationLibrary_8g0qt")
 }
 autoplay = "side"
 
@@ -496,7 +496,7 @@ position = Vector2(412, -355)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform4"]
 libraries = {
-"": SubResource("AnimationLibrary_i5dcg")
+&"": SubResource("AnimationLibrary_i5dcg")
 }
 autoplay = "side2"
 
@@ -505,7 +505,7 @@ position = Vector2(558, -419)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform5"]
 libraries = {
-"": SubResource("AnimationLibrary_cxugf")
+&"": SubResource("AnimationLibrary_cxugf")
 }
 autoplay = "side pause"
 
@@ -517,7 +517,7 @@ position = Vector2(634, -135)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform7"]
 libraries = {
-"": SubResource("AnimationLibrary_lng0p")
+&"": SubResource("AnimationLibrary_lng0p")
 }
 autoplay = "up3"
 
@@ -526,7 +526,7 @@ position = Vector2(370, -252)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/grass platform8"]
 libraries = {
-"": SubResource("AnimationLibrary_efdl0")
+&"": SubResource("AnimationLibrary_efdl0")
 }
 autoplay = "up4"
 

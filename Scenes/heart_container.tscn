@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c5ygmoeyxpaxo" path="res://Assets/health.png" id="1_cd0nr"]
 
 [node name="Health Bar" type="TextureProgressBar"]
-offset_right = 88.0
-offset_bottom = 18.0
+offset_right = 87.0
+offset_bottom = 16.0
 max_value = 5.0
 value = 5.0
 texture_progress = ExtResource("1_cd0nr")
