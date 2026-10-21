@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://t20j60rc62f"]
 
 [ext_resource type="Texture2D" uid="uid://b7wx41vqm7p7g" path="res://Assets/fish key.png" id="1_l7tbs"]
-[ext_resource type="Script" path="res://Scripts/fishkey.gd" id="1_seup1"]
+[ext_resource type="Script" uid="uid://cb226dxh5fq73" path="res://Scripts/fishkey.gd" id="1_seup1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j16ii"]
 atlas = ExtResource("1_l7tbs")
@@ -136,8 +136,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_njbf6"]
 _data = {
-"RESET": SubResource("Animation_mmwnk"),
-"pickup": SubResource("Animation_gf64e")
+&"RESET": SubResource("Animation_mmwnk"),
+&"pickup": SubResource("Animation_gf64e")
 }
 
 [node name="Fish Key" type="Area2D"]

@@ -11,8 +11,11 @@ script = ExtResource("1_s2g5r")
 
 [node name="Lose Screen" type="TextureRect" parent="."]
 unique_name_in_owner = true
-offset_right = 1024.0
-offset_bottom = 768.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_tfbb5")
 expand_mode = 3
 
@@ -34,10 +37,17 @@ text = "You lose!"
 horizontal_alignment = 1
 
 [node name="Restart" type="TextureButton" parent="."]
-offset_left = 252.0
-offset_top = 346.0
-offset_right = 512.0
-offset_bottom = 414.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -20.0
+offset_right = 2.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 texture_normal = ExtResource("3_utkqc")
 texture_hover = ExtResource("4_bgvqp")
@@ -57,10 +67,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="."]
-offset_left = 252.0
-offset_top = 525.0
-offset_right = 512.0
-offset_bottom = 593.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = 170.0
+offset_right = 2.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 texture_normal = ExtResource("3_utkqc")
 texture_hover = ExtResource("4_bgvqp")

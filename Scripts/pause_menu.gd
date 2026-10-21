@@ -1,6 +1,7 @@
-extends Control
+extends CanvasLayer
+
 @onready var pause_menu = $"."
-@onready var resume_button = $Resume
+@onready var resume_button = $VBoxContainer/Resume
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -21,6 +22,6 @@ func _on_resume_pressed():
 	resume()
 
 func _on_quit_pressed():
-	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-	pause()
 	resume()
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	
