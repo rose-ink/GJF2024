@@ -36,25 +36,28 @@ theme_override_colors/font_color = Color(0.631373, 0, 0.0941176, 1)
 text = "You lose!"
 horizontal_alignment = 1
 
-[node name="Restart" type="TextureButton" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -20.0
-offset_right = 2.0
-offset_bottom = 48.0
+offset_left = -196.0
+offset_top = -45.0
+offset_right = 64.0
+offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
+
+[node name="Restart" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("3_utkqc")
 texture_hover = ExtResource("4_bgvqp")
 texture_focused = ExtResource("4_bgvqp")
 script = ExtResource("4_4njri")
 
-[node name="Restart" type="Label" parent="Restart"]
+[node name="Restart" type="Label" parent="VBoxContainer/Restart"]
 layout_mode = 0
 offset_left = 34.5
 offset_top = 8.0
@@ -66,24 +69,13 @@ text = "Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = 170.0
-offset_right = 2.0
-offset_bottom = 238.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("3_utkqc")
 texture_hover = ExtResource("4_bgvqp")
 texture_focused = ExtResource("4_bgvqp")
 
-[node name="Quit" type="Label" parent="Quit"]
+[node name="Quit" type="Label" parent="VBoxContainer/Quit"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 8.5
@@ -96,5 +88,5 @@ main menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
